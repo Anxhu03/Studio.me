@@ -1,6 +1,8 @@
-# Portfolio 3.0 — Anshuman (ANXHU)
+# Studio.me — Anshuman (ANXHU)
 
 A personal portfolio website built with clean semantic HTML5, Vanilla CSS, and modern interactive JavaScript.
+
+Repository: [https://github.com/Anxhu03/Studio.me](https://github.com/Anxhu03/Studio.me)
 
 Inspired by the curated aesthetic of [Wall of Portfolios](https://www.wallofportfolios.in/portfolios/ayush-dhibar/) and designed to showcase multidisciplinary craft across:
 - **Artificial Intelligence & Systems** (Continuo, Sentinel AI, AI Hedge Fund)
