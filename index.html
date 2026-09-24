@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anshuman's Portfolio — Studio.me</title>
-  <meta name="description" content="Anshuman's Portfolio — A Multidisciplinary Creator & Developer experienced in building intelligent products, AI systems, and 3D experiences.">
+  <title>Anshuman — AI × 3D × Design</title>
+  <meta name="description" content="Anshuman (ANXHU) — Computer science student and multidisciplinary creator building digital experiences across AI, 3D, and design.">
 
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Anshuman's Portfolio">
-  <meta property="og:description" content="A Multidisciplinary Creator & Developer experienced in building intelligent products, AI systems, and 3D experiences.">
+  <meta property="og:title" content="Anshuman — AI × 3D × Design">
+  <meta property="og:description" content="Computer science student building digital experiences across AI, 3D, and design.">
   <meta property="og:image" content="assets/character/hero-waving.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -33,33 +33,30 @@
     <span class="cursor-label">VIEW</span>
   </div>
 
-  <!-- FIXED FLOATING NAVBAR -->
-  <header class="framer-nav-container">
-    <div class="framer-nav-pill">
-      <a href="#hero" class="nav-item active">Home</a>
-      <a href="#works" class="nav-item">Works</a>
-      <a href="#about" class="nav-item">About me</a>
-      <a href="#resume" class="nav-item" id="nav-resume-btn">Resume</a>
+  <!-- FIXED BOTTOM-LEFT DOCK NAVIGATION (EXACT REFERENCE RHYTHM) -->
+  <nav class="framer-nav-dock" aria-label="Main Navigation">
+    <div class="dock-inner">
+      <a href="#hero" class="dock-link active" data-nav="hero">Home</a>
+      <a href="#works" class="dock-link" data-nav="works">Works</a>
+      <a href="#about" class="dock-link" data-nav="about">About me</a>
+      <a href="#resume" class="dock-link" id="nav-resume-btn">Resume</a>
+      <span class="dock-divider"></span>
+      <button id="interactive-mode-toggle" class="dock-toggle-btn active" title="Toggle Interactive Mode">
+        <span class="toggle-dot"></span>
+        <span class="toggle-label">Interactive Mode</span>
+        <span class="toggle-badge">ON</span>
+      </button>
     </div>
+  </nav>
 
-    <!-- Top Right: Interactive Mode Controls -->
-    <div class="framer-top-right">
-      <div class="interactive-mode-widget" title="Toggle Interactive Mode">
-        <span class="interactive-tip-text">For a faster experience, turn off Interactive mode.</span>
-        <button id="interactive-mode-toggle" class="interactive-pill-btn active" aria-label="Toggle Interactive Mode">
-          <span class="interactive-label-text">Interactive Mode</span>
-          <span class="toggle-indicator">
-            <span class="toggle-dot"></span>
-            <span class="toggle-status-text">ON</span>
-          </span>
-        </button>
-      </div>
-    </div>
-  </header>
+  <!-- Top Right Subtle Helper Note -->
+  <div class="framer-top-helper" id="top-helper">
+    <span class="helper-text montserrat-font">Interactive Mode is active. Toggle in bottom-left dock.</span>
+  </div>
 
   <main id="main">
 
-    <!-- HERO SECTION (DREAMY ATMOSPHERIC SKY & CLOUDS) -->
+    <!-- HERO SECTION (ATMOSPHERIC SKY, 3D CHARACTER, PARALLAX CLOUDS) -->
     <section id="hero" class="framer-hero-section">
       <!-- Sky Gradient Layers -->
       <div class="sky-gradient-backdrop"></div>
@@ -88,9 +85,17 @@
 
         <div class="hero-subtext">
           <p class="montserrat-font">
-            A Multidisciplinary Creator & Developer experienced in building intelligent products,<br>
-            with a problem solving and creative mindset.
+            Computer science student building digital experiences across AI, 3D, and design.
           </p>
+        </div>
+
+        <!-- 3D CHARACTER CENTERPIECE STAGE -->
+        <div class="hero-character-stage" id="hero-character-stage">
+          <div id="character-canvas-container" class="character-canvas-container"></div>
+          <div class="character-shadow"></div>
+          <div class="character-fallback" id="character-fallback">
+            <img src="assets/character/hero-waving.jpg" alt="Anshuman 3D Character">
+          </div>
         </div>
 
       </div>
@@ -106,7 +111,7 @@
           <span class="ticker-dot"></span>
           <span class="ticker-text rothefight-font">3D & BLENDER</span>
           <span class="ticker-dot"></span>
-          <span class="ticker-text rothefight-font">GRAPHICS</span>
+          <span class="ticker-text rothefight-font">CREATIVE TECH</span>
           <span class="ticker-dot"></span>
           <span class="ticker-text rothefight-font">VIBE CODING</span>
           <span class="ticker-dot"></span>
@@ -118,7 +123,7 @@
           <span class="ticker-dot"></span>
           <span class="ticker-text rothefight-font">3D & BLENDER</span>
           <span class="ticker-dot"></span>
-          <span class="ticker-text rothefight-font">GRAPHICS</span>
+          <span class="ticker-text rothefight-font">CREATIVE TECH</span>
           <span class="ticker-dot"></span>
           <span class="ticker-text rothefight-font">VIBE CODING</span>
           <span class="ticker-dot"></span>
@@ -126,7 +131,7 @@
       </div>
     </section>
 
-    <!-- SECTION: WHO AM I? -->
+    <!-- SECTION: WHO AM I? (PERSONAL COLLAGE WITH TAPED POLAROIDS) -->
     <section id="about" class="framer-whoami-section">
       <div class="framer-container">
         
@@ -136,8 +141,8 @@
             <p class="whoami-bio-para montserrat-font">
               Hey, I’m <strong>Anshuman</strong> (handle: <strong>ANXHU</strong>), a Computer Science student and multidisciplinary creator who bridges AI systems, 3D design, and human-first interfaces. With hands-on engineering across open-source tools and digital experiences, I love turning complex technical challenges into simple, elegant realities.
             </p>
-            <a href="#about-detail" class="know-more-link montserrat-font" id="know-more-trigger">
-              <span>Know more about me</span>
+            <a href="#journey" class="know-more-link montserrat-font" id="know-more-trigger">
+              <span>Know more about my journey</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -145,10 +150,13 @@
             </a>
           </div>
 
-          <!-- Polaroid Grid (Me, Also Me, My Uni, And my work) -->
+          <!-- Polaroid Grid (The 3D Rig, Me, Also Me, Building Continuo) -->
           <div class="polaroid-cards-row">
             
             <div class="framer-polaroid-card p-card-1" data-tilt>
+              <div class="tape-strip">
+                <img src="assets/ui/tape.png" alt="" class="tape-img">
+              </div>
               <div class="polaroid-inner">
                 <div class="polaroid-photo">
                   <img src="assets/character/hero-waving.jpg" alt="The 3D Rig" loading="lazy">
@@ -160,6 +168,9 @@
             </div>
 
             <div class="framer-polaroid-card p-card-2" data-tilt>
+              <div class="tape-strip">
+                <img src="assets/ui/tape.png" alt="" class="tape-img">
+              </div>
               <div class="polaroid-inner">
                 <div class="polaroid-photo">
                   <img src="assets/photos/me_9.17.31_PM.jpg" alt="Me" loading="lazy">
@@ -171,6 +182,9 @@
             </div>
 
             <div class="framer-polaroid-card p-card-3" data-tilt>
+              <div class="tape-strip">
+                <img src="assets/ui/tape.png" alt="" class="tape-img">
+              </div>
               <div class="polaroid-inner">
                 <div class="polaroid-photo">
                   <img src="assets/photos/me_9.17.32_PM_1.jpg" alt="Also Me" loading="lazy">
@@ -182,9 +196,12 @@
             </div>
 
             <div class="framer-polaroid-card p-card-4" data-tilt>
+              <div class="tape-strip">
+                <img src="assets/ui/tape.png" alt="" class="tape-img">
+              </div>
               <div class="polaroid-inner">
                 <div class="polaroid-photo">
-                  <img src="assets/projects/continuo.jpg" alt="Continuo Dev" loading="lazy">
+                  <img src="assets/projects/continuo.jpg" alt="Building Continuo" loading="lazy">
                 </div>
                 <div class="polaroid-label">
                   <span class="label-handwritten caveat-font">Building Continuo</span>
@@ -195,7 +212,7 @@
           </div>
         </div>
 
-        <!-- Big Highlight Statement -->
+        <!-- Big Highlight Statement with Capsule Badges -->
         <div class="editorial-callout-banner">
           <p class="callout-statement montserrat-font">
             From <span class="highlight-capsule">designing</span> at <span class="highlight-capsule">creative labs</span> to <span class="highlight-capsule">building</span> for <span class="highlight-capsule">AI ecosystems</span>, I've tasted both fast-moving engineering platforms and design-driven product ecosystems.
@@ -205,263 +222,401 @@
       </div>
     </section>
 
-    <!-- SECTION: STUFF I'VE WORKED ON -->
+    <!-- SECTION: STUFF I'VE WORKED ON (RETRO CONSOLE SLIDER + EDITORIAL CATALOG) -->
     <section id="works" class="framer-works-section">
       <div class="framer-container">
         
-        <div class="works-title-area">
-          <h2 class="works-title-heading">
-            <span class="montserrat-font font-light">Stuff I've</span><br>
-            <span class="against-font font-gradient">worked on</span>
-          </h2>
-          <p class="works-lead-desc montserrat-font">
-            I've worked on end-to-end software and product design across web and mobile platforms, spanning distributed systems, LLM context architecture, 3D assets, and UI execution.
-          </p>
-        </div>
+        <div class="works-showcase-row">
+          <!-- Left Column: Balloon & Intro -->
+          <div class="works-left-intro">
+            <div class="balloon-floating-wrap">
+              <img src="assets/ui/balloon.png" alt="Hot Air Balloon" class="hot-air-balloon" loading="lazy">
+            </div>
+            <div class="works-title-area">
+              <h2 class="works-title-heading">
+                <span class="montserrat-font font-light">Stuff I've</span><br>
+                <span class="against-font font-gradient">worked on</span>
+              </h2>
+              <p class="works-lead-desc montserrat-font">
+                I've worked on end-to-end software and product design across web and mobile platforms, spanning distributed systems, LLM context architecture, 3D assets, and UI execution.
+              </p>
+              <a href="#all-projects-catalog" class="explore-all-btn montserrat-font">
+                <span>Browse Project Catalog</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
 
-        <!-- Filter Chips -->
-        <div class="works-filter-strip">
-          <button class="filter-chip active" data-filter="all">All Projects</button>
-          <button class="filter-chip" data-filter="ai">AI & Systems</button>
-          <button class="filter-chip" data-filter="3d">3D & Blender</button>
-          <button class="filter-chip" data-filter="design">UI/UX & Product</button>
-        </div>
-
-        <!-- Projects Cards Showcase (Framer Exact Card Style) -->
-        <div class="framer-projects-list">
-          
-          <!-- PROJECT 1: Continuo -->
-          <article class="framer-project-item" data-category="ai" data-project="continuo">
-            <div class="project-item-inner">
-              <div class="project-visual-preview">
-                <img src="assets/projects/continuo.jpg" alt="Continuo AI Context Portability Platform" loading="lazy">
-                <div class="preview-badge-chip">FEATURED PROJECT</div>
-              </div>
-              <div class="project-info-block">
-                <div class="project-meta-pills">
-                  <span class="meta-tag">AI / EXTENSION</span>
-                  <span class="meta-tag">OPEN SOURCE</span>
-                  <span class="meta-tag">2024</span>
+          <!-- Right Column: Retro Hardware Console Showcase -->
+          <div class="works-right-console">
+            <div class="hardware-console-frame" id="hardware-console">
+              
+              <!-- Chassis Header -->
+              <div class="console-chassis-top">
+                <div class="console-brand-text montserrat-font">
+                  <span class="brand-led"></span>
+                  <span>ANXHU CONSOLE // CHANNEL 01</span>
                 </div>
-                <h3 class="project-name-heading montserrat-font">Continuo — AI Context Portability Platform</h3>
-                <p class="project-summary-text montserrat-font">
+                <div class="console-channel-readout mono-font" id="console-channel-tag">
+                  CH 01 / 06
+                </div>
+              </div>
+
+              <!-- CRT Screen Display -->
+              <div class="console-crt-screen" id="console-screen">
+                <div class="screen-glass-glare"></div>
+                <img id="console-screen-img" src="assets/projects/continuo.jpg" alt="Active Project Display" class="console-display-img">
+                <div class="screen-scanlines"></div>
+                <div class="screen-badge" id="console-screen-badge">FEATURED // AI PLATFORM</div>
+              </div>
+
+              <!-- Hardware Deck: Knobs & Buttons -->
+              <div class="console-hardware-deck">
+                <div class="hardware-controls-left">
+                  <div class="rotary-knob-wrap" id="console-knob" title="Click or scroll to change channel">
+                    <img src="assets/ui/device_knob.png" alt="Tuning Knob" class="rotary-knob-img" id="rotary-knob-element">
+                    <span class="knob-label mono-font">TUNE</span>
+                  </div>
+
+                  <div class="console-switches-group">
+                    <button class="hardware-toggle-switch" id="console-switch-btn" title="Toggle Channel Mode">
+                      <img src="assets/ui/switch_up.png" alt="Switch" id="switch-img" class="switch-img">
+                      <span class="switch-label mono-font">MODE</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="hardware-controls-right">
+                  <button id="console-prev-btn" class="console-nav-btn" aria-label="Previous Channel">
+                    <img src="assets/ui/push_btn1.png" alt="Prev" class="push-btn-img">
+                    <span class="btn-text mono-font">PREV</span>
+                  </button>
+                  <button id="console-next-btn" class="console-nav-btn" aria-label="Next Channel">
+                    <img src="assets/ui/push_btn2.png" alt="Next" class="push-btn-img">
+                    <span class="btn-text mono-font">NEXT</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Project Metadata on Console -->
+              <div class="console-meta-panel">
+                <div class="console-meta-header">
+                  <span class="console-category-pill" id="console-cat-pill">AI / EXTENSION</span>
+                  <span class="console-year mono-font" id="console-year">2024</span>
+                </div>
+                <h3 class="console-title montserrat-font" id="console-title">Continuo — AI Context Portability Platform</h3>
+                <p class="console-desc montserrat-font" id="console-desc">
                   Keep your context. Continue anywhere. An open-source extension and semantic vector bridge that enables instantaneous workflow migration across ChatGPT, Claude, and local IDEs.
                 </p>
-                <div class="project-tags-cloud">
-                  <span class="ptag">React 19</span>
-                  <span class="ptag">FastAPI</span>
-                  <span class="ptag">Manifest V3</span>
-                  <span class="ptag">ChromaDB</span>
-                  <span class="ptag">Three.js</span>
-                </div>
-                <div class="project-card-footer">
-                  <button class="action-view-btn" data-id="continuo">
+                <div class="console-actions-row">
+                  <button class="console-view-btn montserrat-font" id="console-view-modal-btn" data-id="continuo">
                     <span>View Case Study</span>
-                    <span class="arrow-icon">→</span>
+                    <span>→</span>
                   </button>
-                  <a href="https://github.com/Anxhu03/Continuo" target="_blank" rel="noopener" class="repo-link" title="Open GitHub Repo">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <a id="console-github-link" href="https://github.com/Anxhu03/Continuo" target="_blank" rel="noopener" class="console-github-btn" title="Open GitHub Repo">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                     </svg>
+                    <span>GitHub</span>
                   </a>
                 </div>
               </div>
-            </div>
-          </article>
 
-          <!-- PROJECT 2: Sentinel AI -->
-          <article class="framer-project-item" data-category="ai" data-project="sentinel-ai">
-            <div class="project-item-inner">
-              <div class="project-visual-preview">
-                <img src="assets/projects/sentinel.jpg" alt="Sentinel AI Cyber Threat Telemetry" loading="lazy">
-              </div>
-              <div class="project-info-block">
-                <div class="project-meta-pills">
-                  <span class="meta-tag">CYBER TELEMETRY</span>
-                  <span class="meta-tag">MACHINE LEARNING</span>
-                </div>
-                <h3 class="project-name-heading montserrat-font">Sentinel AI — Autonomous Threat Telemetry</h3>
-                <p class="project-summary-text montserrat-font">
-                  Autonomous threat surveillance engine that processes high-frequency network packets using graph neural networks to isolate lateral intrusions in real time.
-                </p>
-                <div class="project-tags-cloud">
-                  <span class="ptag">Python</span>
-                  <span class="ptag">PyTorch</span>
-                  <span class="ptag">FastAPI</span>
-                  <span class="ptag">WebSockets</span>
-                </div>
-                <div class="project-card-footer">
-                  <button class="action-view-btn" data-id="sentinel-ai">
-                    <span>View Case Study</span>
-                    <span class="arrow-icon">→</span>
-                  </button>
-                  <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="repo-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
             </div>
-          </article>
-
-          <!-- PROJECT 3: AI Hedge Fund -->
-          <article class="framer-project-item" data-category="ai" data-project="ai-hedge-fund">
-            <div class="project-item-inner">
-              <div class="project-visual-preview">
-                <img src="assets/projects/hedgefund.jpg" alt="AI Hedge Fund Algorithmic Trading" loading="lazy">
-              </div>
-              <div class="project-info-block">
-                <div class="project-meta-pills">
-                  <span class="meta-tag">QUANT FINANCE</span>
-                  <span class="meta-tag">SYSTEMATIC TRADING</span>
-                </div>
-                <h3 class="project-name-heading montserrat-font">AI Hedge Fund — Market Intelligence</h3>
-                <p class="project-summary-text montserrat-font">
-                  Quantitative algorithmic research harness modeling volatility surfaces, Gaussian process forecasts, and multi-agent portfolio allocation with Monte Carlo simulation.
-                </p>
-                <div class="project-tags-cloud">
-                  <span class="ptag">Python</span>
-                  <span class="ptag">NumPy</span>
-                  <span class="ptag">LightGBM</span>
-                  <span class="ptag">TimescaleDB</span>
-                </div>
-                <div class="project-card-footer">
-                  <button class="action-view-btn" data-id="ai-hedge-fund">
-                    <span>View Case Study</span>
-                    <span class="arrow-icon">→</span>
-                  </button>
-                  <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="repo-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 4: Blender 3D Collection -->
-          <article class="framer-project-item" data-category="3d" data-project="blender-collection">
-            <div class="project-item-inner">
-              <div class="project-visual-preview">
-                <img src="assets/projects/blender.jpg" alt="Blender 3D Hard Surface Mecha" loading="lazy">
-              </div>
-              <div class="project-info-block">
-                <div class="project-meta-pills">
-                  <span class="meta-tag">3D DESIGN</span>
-                  <span class="meta-tag">BLENDER 4.1</span>
-                  <span class="meta-tag">CYCLES</span>
-                </div>
-                <h3 class="project-name-heading montserrat-font">Blender 3D — Hard-Surface Mecha & Rig</h3>
-                <p class="project-summary-text montserrat-font">
-                  Cinematic hard-surface mecha bust with layered procedural carbon fiber, cloth physics, character armature rigging, and web-ready GLTF models.
-                </p>
-                <div class="project-tags-cloud">
-                  <span class="ptag">Blender 4.1</span>
-                  <span class="ptag">Cycles</span>
-                  <span class="ptag">Armature Rig</span>
-                  <span class="ptag">WebGL</span>
-                </div>
-                <div class="project-card-footer">
-                  <button class="action-view-btn" data-id="blender-collection">
-                    <span>View Case Study</span>
-                    <span class="arrow-icon">→</span>
-                  </button>
-                  <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="repo-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 5: Nexora AI -->
-          <article class="framer-project-item" data-category="design" data-project="nexora-ai">
-            <div class="project-item-inner">
-              <div class="project-visual-preview">
-                <img src="assets/projects/nexora.jpg" alt="Nexora AI Adaptive UI" loading="lazy">
-              </div>
-              <div class="project-info-block">
-                <div class="project-meta-pills">
-                  <span class="meta-tag">AI PRODUCT</span>
-                  <span class="meta-tag">INTERACTION DESIGN</span>
-                </div>
-                <h3 class="project-name-heading montserrat-font">Nexora AI — Fluid Multi-Persona UI</h3>
-                <p class="project-summary-text montserrat-font">
-                  Adaptive generative workspace that reconfigures cognitive personality modes, real-time sinusoidal audio waves, and modular cards based on user intent.
-                </p>
-                <div class="project-tags-cloud">
-                  <span class="ptag">Web Audio API</span>
-                  <span class="ptag">Design Tokens</span>
-                  <span class="ptag">Figma</span>
-                  <span class="ptag">React</span>
-                </div>
-                <div class="project-card-footer">
-                  <button class="action-view-btn" data-id="nexora-ai">
-                    <span>View Case Study</span>
-                    <span class="arrow-icon">→</span>
-                  </button>
-                  <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="repo-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 6: EcoTrack & Design Systems -->
-          <article class="framer-project-item" data-category="design" data-project="uiux-work">
-            <div class="project-item-inner">
-              <div class="project-visual-preview">
-                <img src="assets/projects/uiux.jpg" alt="EcoTrack Design Systems" loading="lazy">
-              </div>
-              <div class="project-info-block">
-                <div class="project-meta-pills">
-                  <span class="meta-tag">DESIGN SYSTEM</span>
-                  <span class="meta-tag">PRODUCT DESIGN</span>
-                </div>
-                <h3 class="project-name-heading montserrat-font">EcoTrack & Modular Design Tokens</h3>
-                <p class="project-summary-text montserrat-font">
-                  Comprehensive 40+ component design system, dark mode ergonomic guidelines, and high-density analytics console engineered for developer consistency.
-                </p>
-                <div class="project-tags-cloud">
-                  <span class="ptag">Figma</span>
-                  <span class="ptag">Design Tokens</span>
-                  <span class="ptag">WCAG AAA</span>
-                  <span class="ptag">Auto-Layout</span>
-                </div>
-                <div class="project-card-footer">
-                  <button class="action-view-btn" data-id="uiux-work">
-                    <span>View Case Study</span>
-                    <span class="arrow-icon">→</span>
-                  </button>
-                  <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="repo-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
+          </div>
         </div>
 
-        <div class="works-cta-center">
-          <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="framer-pill-cta montserrat-font">
-            <span>View more projects on GitHub ↗</span>
-          </a>
+        <!-- FULL PROJECT CATALOG -->
+        <div id="all-projects-catalog" class="catalog-section-wrap">
+          
+          <div class="catalog-header-bar">
+            <h3 class="catalog-heading montserrat-font">Complete Projects Collection</h3>
+            <!-- Filter Chips -->
+            <div class="works-filter-strip">
+              <button class="filter-chip active" data-filter="all">All Projects</button>
+              <button class="filter-chip" data-filter="ai">AI & Systems</button>
+              <button class="filter-chip" data-filter="3d">3D & Blender</button>
+              <button class="filter-chip" data-filter="design">UI/UX & Product</button>
+            </div>
+          </div>
+
+          <!-- Projects Cards Showcase -->
+          <div class="framer-projects-list">
+            
+            <!-- PROJECT 1: Continuo -->
+            <article class="framer-project-item" data-category="ai" data-project="continuo">
+              <div class="project-item-inner">
+                <div class="project-visual-preview">
+                  <img src="assets/projects/continuo.jpg" alt="Continuo AI Context Portability Platform" loading="lazy">
+                  <div class="preview-badge-chip">FEATURED PROJECT</div>
+                </div>
+                <div class="project-info-block">
+                  <div class="project-meta-pills">
+                    <span class="meta-tag">AI / EXTENSION</span>
+                    <span class="meta-tag">OPEN SOURCE</span>
+                    <span class="meta-tag">2024</span>
+                  </div>
+                  <h3 class="project-name-heading montserrat-font">Continuo — AI Context Portability Platform</h3>
+                  <p class="project-summary-text montserrat-font">
+                    Keep your context. Continue anywhere. An open-source extension and semantic vector bridge that enables instantaneous workflow migration across ChatGPT, Claude, and local IDEs.
+                  </p>
+                  <div class="project-tags-cloud">
+                    <span class="ptag">React 19</span>
+                    <span class="ptag">FastAPI</span>
+                    <span class="ptag">Manifest V3</span>
+                    <span class="ptag">ChromaDB</span>
+                    <span class="ptag">Three.js</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <button class="action-view-btn" data-id="continuo">
+                      <span>View Case Study</span>
+                      <span class="arrow-icon">→</span>
+                    </button>
+                    <a href="https://github.com/Anxhu03/Continuo" target="_blank" rel="noopener" class="repo-link" title="Open GitHub Repo">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 2: Sentinel AI -->
+            <article class="framer-project-item" data-category="ai" data-project="sentinel-ai">
+              <div class="project-item-inner">
+                <div class="project-visual-preview">
+                  <img src="assets/projects/sentinel.jpg" alt="Sentinel AI Cyber Threat Telemetry" loading="lazy">
+                </div>
+                <div class="project-info-block">
+                  <div class="project-meta-pills">
+                    <span class="meta-tag">CYBER TELEMETRY</span>
+                    <span class="meta-tag">MACHINE LEARNING</span>
+                  </div>
+                  <h3 class="project-name-heading montserrat-font">Sentinel AI — Autonomous Threat Telemetry</h3>
+                  <p class="project-summary-text montserrat-font">
+                    Autonomous threat surveillance engine that processes high-frequency network packets using graph neural networks to isolate lateral intrusions in real time.
+                  </p>
+                  <div class="project-tags-cloud">
+                    <span class="ptag">Python</span>
+                    <span class="ptag">PyTorch</span>
+                    <span class="ptag">FastAPI</span>
+                    <span class="ptag">WebSockets</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <button class="action-view-btn" data-id="sentinel-ai">
+                      <span>View Case Study</span>
+                      <span class="arrow-icon">→</span>
+                    </button>
+                    <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="repo-link">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 3: AI Hedge Fund -->
+            <article class="framer-project-item" data-category="ai" data-project="ai-hedge-fund">
+              <div class="project-item-inner">
+                <div class="project-visual-preview">
+                  <img src="assets/projects/hedgefund.jpg" alt="AI Hedge Fund Algorithmic Trading" loading="lazy">
+                </div>
+                <div class="project-info-block">
+                  <div class="project-meta-pills">
+                    <span class="meta-tag">QUANT FINANCE</span>
+                    <span class="meta-tag">SYSTEMATIC TRADING</span>
+                  </div>
+                  <h3 class="project-name-heading montserrat-font">AI Hedge Fund — Market Intelligence</h3>
+                  <p class="project-summary-text montserrat-font">
+                    Quantitative algorithmic research harness modeling volatility surfaces, Gaussian process forecasts, and multi-agent portfolio allocation with Monte Carlo simulation.
+                  </p>
+                  <div class="project-tags-cloud">
+                    <span class="ptag">Python</span>
+                    <span class="ptag">NumPy</span>
+                    <span class="ptag">LightGBM</span>
+                    <span class="ptag">TimescaleDB</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <button class="action-view-btn" data-id="ai-hedge-fund">
+                      <span>View Case Study</span>
+                      <span class="arrow-icon">→</span>
+                    </button>
+                    <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="repo-link">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 4: Blender 3D Collection -->
+            <article class="framer-project-item" data-category="3d" data-project="blender-collection">
+              <div class="project-item-inner">
+                <div class="project-visual-preview">
+                  <img src="assets/projects/blender.jpg" alt="Blender 3D Hard Surface Mecha" loading="lazy">
+                </div>
+                <div class="project-info-block">
+                  <div class="project-meta-pills">
+                    <span class="meta-tag">3D DESIGN</span>
+                    <span class="meta-tag">BLENDER 4.1</span>
+                    <span class="meta-tag">CYCLES</span>
+                  </div>
+                  <h3 class="project-name-heading montserrat-font">Blender 3D — Hard-Surface Mecha & Rig</h3>
+                  <p class="project-summary-text montserrat-font">
+                    Cinematic hard-surface mecha bust with layered procedural carbon fiber, cloth physics, character armature rigging, and web-ready GLTF models.
+                  </p>
+                  <div class="project-tags-cloud">
+                    <span class="ptag">Blender 4.1</span>
+                    <span class="ptag">Cycles</span>
+                    <span class="ptag">Armature Rig</span>
+                    <span class="ptag">WebGL</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <button class="action-view-btn" data-id="blender-collection">
+                      <span>View Case Study</span>
+                      <span class="arrow-icon">→</span>
+                    </button>
+                    <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="repo-link">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 5: Nexora AI -->
+            <article class="framer-project-item" data-category="design" data-project="nexora-ai">
+              <div class="project-item-inner">
+                <div class="project-visual-preview">
+                  <img src="assets/projects/nexora.jpg" alt="Nexora AI Adaptive UI" loading="lazy">
+                </div>
+                <div class="project-info-block">
+                  <div class="project-meta-pills">
+                    <span class="meta-tag">AI PRODUCT</span>
+                    <span class="meta-tag">INTERACTION DESIGN</span>
+                  </div>
+                  <h3 class="project-name-heading montserrat-font">Nexora AI — Fluid Multi-Persona UI</h3>
+                  <p class="project-summary-text montserrat-font">
+                    Adaptive generative workspace that reconfigures cognitive personality modes, real-time sinusoidal audio waves, and modular cards based on user intent.
+                  </p>
+                  <div class="project-tags-cloud">
+                    <span class="ptag">Web Audio API</span>
+                    <span class="ptag">Design Tokens</span>
+                    <span class="ptag">Figma</span>
+                    <span class="ptag">React</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <button class="action-view-btn" data-id="nexora-ai">
+                      <span>View Case Study</span>
+                      <span class="arrow-icon">→</span>
+                    </button>
+                    <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="repo-link">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 6: EcoTrack & Design Systems -->
+            <article class="framer-project-item" data-category="design" data-project="uiux-work">
+              <div class="project-item-inner">
+                <div class="project-visual-preview">
+                  <img src="assets/projects/uiux.jpg" alt="EcoTrack Design Systems" loading="lazy">
+                </div>
+                <div class="project-info-block">
+                  <div class="project-meta-pills">
+                    <span class="meta-tag">DESIGN SYSTEM</span>
+                    <span class="meta-tag">PRODUCT DESIGN</span>
+                  </div>
+                  <h3 class="project-name-heading montserrat-font">EcoTrack & Modular Design Tokens</h3>
+                  <p class="project-summary-text montserrat-font">
+                    Comprehensive 40+ component design system, dark mode ergonomic guidelines, and high-density analytics console engineered for developer consistency.
+                  </p>
+                  <div class="project-tags-cloud">
+                    <span class="ptag">Figma</span>
+                    <span class="ptag">Design Tokens</span>
+                    <span class="ptag">WCAG AAA</span>
+                    <span class="ptag">Auto-Layout</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <button class="action-view-btn" data-id="uiux-work">
+                      <span>View Case Study</span>
+                      <span class="arrow-icon">→</span>
+                    </button>
+                    <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="repo-link">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="works-cta-center">
+            <a href="https://github.com/Anxhu03" target="_blank" rel="noopener" class="framer-pill-cta montserrat-font">
+              <span>View more code & experiments on GitHub ↗</span>
+            </a>
+          </div>
+
         </div>
 
       </div>
     </section>
 
-    <!-- SECTION: WISDOM THAT SHAPED ME -->
+    <!-- SECTION: 3D CHARACTER & BLENDER STUDIO GALLERY -->
+    <section id="blender-studio" class="framer-blender-showcase">
+      <div class="framer-container">
+        
+        <div class="blender-header-row">
+          <div class="blender-title-box">
+            <span class="blender-eyebrow mono-font">CRAFT & RENDER ENGINE</span>
+            <h2 class="works-title-heading">
+              <span class="montserrat-font font-light">3D Character &</span><br>
+              <span class="against-font font-gradient">Blender Studio</span>
+            </h2>
+            <p class="blender-desc montserrat-font">
+              Rigged character armatures, procedural carbon textures, and real-time WebGL asset optimization. Designed in Blender 4.1 with Cycles and calibrated for real-time digital worlds.
+            </p>
+          </div>
+          <div class="blender-controls-box">
+            <span class="angle-label mono-font">CAMERA ANGLE:</span>
+            <div class="angle-buttons-row">
+              <button class="angle-btn active" data-angle="front">Front</button>
+              <button class="angle-btn" data-angle="hero-waving">Waving</button>
+              <button class="angle-btn" data-angle="left">Left</button>
+              <button class="angle-btn" data-angle="right">Right</button>
+              <button class="angle-btn" data-angle="back">Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="blender-stage-display">
+          <div class="blender-photo-frame">
+            <img id="blender-active-render" src="assets/character/front.jpg" alt="Blender Character Model" class="blender-main-img">
+            <div class="blender-watermark mono-font">ANXHU // 3D ASSET SPEC 4.1</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: WISDOM THAT SHAPED ME (STEVE JOBS QUOTE & 3D FANNING BOOKSHELF) -->
     <section id="wisdom" class="framer-wisdom-section">
       <div class="framer-container">
         
@@ -472,53 +627,70 @@
           </h2>
         </div>
 
-        <!-- Steve Jobs Quote (Framer Exact) -->
+        <!-- Steve Jobs Quote (Framer Reference Quote) -->
         <div class="wisdom-quote-wrapper">
           <blockquote class="steve-jobs-quote">
+            <div class="quote-mark-icon" aria-hidden="true">“</div>
             <p class="quote-text-main montserrat-font">
-              “Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn’t really do it, they just saw something. It seemed obvious to them after a while. That’s because they were able to connect experiences they’ve had and synthesize new things.”
+              Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn’t really do it, they just saw something. It seemed obvious to them after a while. That’s because they were able to connect experiences they’ve had and synthesize new things.
             </p>
             <footer class="quote-signature against-font">— Steve Jobs</footer>
           </blockquote>
         </div>
 
-        <!-- 3D Books Showcase -->
-        <div class="bookshelf-3d-row">
-          
-          <div class="book-3d-item" data-tilt>
-            <div class="book-cover-3d">
-              <img src="assets/books/refactoring_ui.jpg" alt="Refactoring UI" loading="lazy">
+        <!-- 3D Upright Bookshelf with Spine Depth & Pull-Out Hover -->
+        <div class="bookshelf-stage">
+          <div class="bookshelf-3d-row">
+            
+            <div class="book-3d-item" data-tilt>
+              <div class="book-object-3d">
+                <div class="book-spine"></div>
+                <div class="book-cover-3d">
+                  <img src="assets/books/refactoring_ui.jpg" alt="Refactoring UI" loading="lazy">
+                </div>
+              </div>
+              <div class="book-title-meta montserrat-font">Refactoring UI</div>
             </div>
-            <div class="book-title-meta montserrat-font">Refactoring UI</div>
-          </div>
 
-          <div class="book-3d-item" data-tilt>
-            <div class="book-cover-3d">
-              <img src="assets/books/mom_test.jpg" alt="The Mom Test" loading="lazy">
+            <div class="book-3d-item" data-tilt>
+              <div class="book-object-3d">
+                <div class="book-spine"></div>
+                <div class="book-cover-3d">
+                  <img src="assets/books/mom_test.jpg" alt="The Mom Test" loading="lazy">
+                </div>
+              </div>
+              <div class="book-title-meta montserrat-font">THE MOM TEST</div>
             </div>
-            <div class="book-title-meta montserrat-font">THE MOM TEST</div>
-          </div>
 
-          <div class="book-3d-item" data-tilt>
-            <div class="book-cover-3d">
-              <img src="assets/books/inspired.jpg" alt="Inspired" loading="lazy">
+            <div class="book-3d-item" data-tilt>
+              <div class="book-object-3d">
+                <div class="book-spine"></div>
+                <div class="book-cover-3d">
+                  <img src="assets/books/inspired.jpg" alt="Inspired" loading="lazy">
+                </div>
+              </div>
+              <div class="book-title-meta montserrat-font">INSPIRED</div>
             </div>
-            <div class="book-title-meta montserrat-font">INSPIRED</div>
-          </div>
 
-          <div class="book-3d-item" data-tilt>
-            <div class="book-cover-3d">
-              <img src="assets/books/steve_jobs.jpg" alt="Steve Jobs" loading="lazy">
+            <div class="book-3d-item" data-tilt>
+              <div class="book-object-3d">
+                <div class="book-spine"></div>
+                <div class="book-cover-3d">
+                  <img src="assets/books/steve_jobs.jpg" alt="Steve Jobs" loading="lazy">
+                </div>
+              </div>
+              <div class="book-title-meta montserrat-font">STEVE JOBS</div>
             </div>
-            <div class="book-title-meta montserrat-font">STEVE JOBS</div>
-          </div>
 
+          </div>
+          <!-- Shelf Wooden Ledge -->
+          <div class="shelf-wooden-ledge"></div>
         </div>
 
       </div>
     </section>
 
-    <!-- SECTION: JOURNEY SO FAR -->
+    <!-- SECTION: JOURNEY SO FAR (VERTICAL MILESTONES RAIL) -->
     <section id="journey" class="framer-journey-section">
       <div class="framer-container">
         
@@ -569,15 +741,23 @@
       </div>
     </section>
 
-    <!-- FOOTER / CONTACT SECTION (EXACT FRAMER MATCH) -->
+    <!-- FOOTER / CONTACT SECTION (MEADOW BACKDROP, 3D ICONS, CALLOUT) -->
     <footer id="contact" class="framer-footer-section">
-      <!-- Clouds at footer base -->
-      <div class="footer-clouds-backdrop">
-        <img src="assets/clouds/clouds_footer.png" alt="" class="footer-cloud-img">
+      <!-- Meadow backdrop with flowers across base -->
+      <div class="footer-meadow-backdrop">
+        <img src="assets/ui/meadow.png" alt="" class="footer-meadow-img">
       </div>
 
       <div class="framer-container footer-content-box">
         
+        <!-- Floating 3D Sparkle and Social Icons -->
+        <div class="footer-floating-icons" aria-hidden="true">
+          <img src="assets/ui/icon_star.png" alt="" class="floating-icon icon-star">
+          <img src="assets/ui/icon_sparkle.png" alt="" class="floating-icon icon-sparkle">
+          <img src="assets/ui/icon_social_1.png" alt="" class="floating-icon icon-pill-1">
+          <img src="assets/ui/icon_social_2.png" alt="" class="floating-icon icon-pill-2">
+        </div>
+
         <h2 class="footer-callout-heading against-font">
           Let’s build something meaningful together
         </h2>
@@ -599,7 +779,7 @@
             <a href="https://github.com/Anxhu03" target="_blank" rel="noopener">GitHub</a>
             <a href="https://github.com/Anxhu03/Continuo" target="_blank" rel="noopener">Continuo</a>
             <a href="https://www.wallofportfolios.in/portfolios/ayush-dhibar/" target="_blank" rel="noopener">Wall of Portfolios</a>
-            <a href="#" id="view-resume-link">View my Resume</a>
+            <a href="#resume" id="view-resume-link">View my Resume</a>
           </div>
 
           <p class="copyright-line montserrat-font">
@@ -653,12 +833,62 @@
     </div>
   </dialog>
 
+  <!-- RESUME PREVIEW MODAL -->
+  <dialog id="resume-modal" class="framer-case-dialog resume-dialog">
+    <div class="case-dialog-inner">
+      <div class="case-dialog-header">
+        <span class="modal-cat-pill">CURRICULUM VITAE</span>
+        <button id="close-resume-modal" class="modal-close-round" aria-label="Close Resume">✕</button>
+      </div>
+      <div class="case-dialog-scroll">
+        <div class="resume-sheet">
+          <div class="resume-sheet-header">
+            <h2 class="against-font resume-name">Anshuman</h2>
+            <p class="resume-title montserrat-font">AI Engineer · 3D Creator · Full-Stack Developer</p>
+            <p class="resume-contact mono-font">anshuman4252@gmail.com | github.com/Anxhu03</p>
+          </div>
+          <hr class="resume-sep">
+          <div class="resume-section">
+            <h4 class="resume-h4 montserrat-font">Education</h4>
+            <p class="resume-item-title montserrat-font"><strong>B.Tech in Computer Science & Engineering</strong></p>
+            <p class="resume-item-desc montserrat-font">Core disciplines: Deep Learning, Distributed Systems, Data Structures & Algorithms, Computer Graphics.</p>
+          </div>
+          <div class="resume-section">
+            <h4 class="resume-h4 montserrat-font">Key Engineering Projects</h4>
+            <p class="resume-item-title montserrat-font"><strong>Continuo — AI Context Portability Platform</strong></p>
+            <p class="resume-item-desc montserrat-font">Open-source extension bridging conversation state across LLM ecosystems using vector memory sync.</p>
+            <p class="resume-item-title montserrat-font"><strong>Sentinel AI — Autonomous Threat Telemetry</strong></p>
+            <p class="resume-item-desc montserrat-font">Graph neural network system detecting lateral intrusions on real-time network packets.</p>
+            <p class="resume-item-title montserrat-font"><strong>AI Hedge Fund — Market Intelligence</strong></p>
+            <p class="resume-item-desc montserrat-font">Quantitative research environment modeling volatility surfaces and algorithmic allocation.</p>
+          </div>
+          <div class="resume-section">
+            <h4 class="resume-h4 montserrat-font">Core Competencies</h4>
+            <p class="resume-item-desc montserrat-font"><strong>Languages & Frameworks:</strong> Python, PyTorch, React, Three.js, WebGL, FastAPI, JavaScript, TypeScript, SQL.</p>
+            <p class="resume-item-desc montserrat-font"><strong>Design & Creative:</strong> Blender 4.1 (Cycles, Armatures, Modeling), Figma, Design Systems, Typography Ergonomics.</p>
+          </div>
+          <div class="resume-download-bar">
+            <a href="mailto:anshuman4252@gmail.com?subject=Resume%20Inquiry" class="modal-primary-btn montserrat-font">
+              <span>Request Full Official Resume PDF ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Toast Notification -->
   <div id="toast" class="framer-toast">
     <span class="toast-dot"></span>
     <span id="toast-text">Showcase Link copied!</span>
   </div>
 
+  <!-- Three.js + MeshoptDecoder + GLTFLoader (Offline Local Assets) -->
+  <script src="assets/js/three.min.js"></script>
+  <script src="assets/js/meshopt_decoder.js"></script>
+  <script src="assets/js/GLTFLoader.js"></script>
+
+  <!-- Application Logic -->
   <script src="app.js"></script>
 </body>
 </html>
